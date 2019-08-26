@@ -2,7 +2,6 @@ let chai = require("chai")
 let expect = chai.expect
 let chaiHttp = require("chai-http")
 let server = "http://localhost:3003"
-// let app = require("../../dist/index")
 
 chai.use(chaiHttp)
 describe("API", function() {
