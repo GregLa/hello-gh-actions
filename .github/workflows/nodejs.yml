@@ -17,16 +17,28 @@ jobs:
         npm install
         npm run build
         npm test
-      env:
-        CI: true
   deploy:
-    runs-on: ubuntu-lates
     needs: build
+    runs-on: ubuntu-lates
+    strategy:
+      matrix:
+        node-version: [10]
     steps:
     - name: Login to Heroku
       uses: actions/heroku@master
       env:
-        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        HEROKU_APP: ${{ secrets.HEROKU_APP }}
+        secrets : [${{ secrets.HEROKU_API_KEY }}]
       with:
         args: container:login
+    - name: Push to Heroku
+      uses: actions/heroku@master
+      env:
+        secrets : [${{ secrets.HEROKU_API_KEY }}]
+      with:
+        args: container:push -a hello-gh-actions web
+    - name: Deploy to Heroku
+      uses: actions/heroku@master
+      env:
+        secrets : [${{ secrets.HEROKU_API_KEY }}]
+      with:
+        args: container:release -a hello-gh-actions web
