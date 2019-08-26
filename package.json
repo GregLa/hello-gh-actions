@@ -1,0 +1,19 @@
+{
+  "name": "hello-gh-actions",
+  "version": "0.0.1",
+  "description": "Playground API for Github actions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GregLa/hello-gh-actions.git"
+  },
+  "author": "gregoire.lagoutte@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GregLa/hello-gh-actions/issues"
+  },
+  "homepage": "https://github.com/GregLa/hello-gh-actions#readme"
+}
