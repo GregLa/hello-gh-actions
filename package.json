@@ -2,8 +2,12 @@
   "name": "hello-gh-actions",
   "version": "0.0.1",
   "description": "Playground API for Github actions",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
+    "rmDist": "rimraf dist",
+    "preLaunch": "npm run rmDist && tsc -p tsconfig.json",
+    "build": "npm run rmDist && tsc -p tsconfig.prod.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +19,13 @@
   "bugs": {
     "url": "https://github.com/GregLa/hello-gh-actions/issues"
   },
-  "homepage": "https://github.com/GregLa/hello-gh-actions#readme"
+  "homepage": "https://github.com/GregLa/hello-gh-actions#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.1",
+    "@types/node": "^12.7.2",
+    "rimraf": "^3.0.0"
+  }
 }
