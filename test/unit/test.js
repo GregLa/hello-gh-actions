@@ -18,7 +18,7 @@ describe("API", function() {
             chai.request(app)
                 .get("/")
                 .end((err, res) => {
-                    expect(res.text).to.eq("Hello actions !")
+                    expect(res.text).to.have.string("Hello actions")
                     done()
                 })
         })
