@@ -8,6 +8,7 @@
     "rmDist": "rimraf dist",
     "preLaunch": "npm run rmDist && tsc -p tsconfig.json",
     "build": "npm run rmDist && tsc -p tsconfig.prod.json",
+    "launchBuilded": "node dist/index.js",
     "test": "mocha test/unit/test.js --exit"
   },
   "repository": {
